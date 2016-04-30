@@ -23,16 +23,21 @@
   </head>
   <body >
     
+    <div id = 'chart2bb01716d8c' class = 'rChart nvd3'></div>    
     <script type='text/javascript'>
  $(document).ready(function(){
+      drawchart2bb01716d8c()
     });
+    function drawchart2bb01716d8c(){  
       var opts = {
+ "dom": "chart2bb01716d8c",
 "width":    725,
 "height":    400,
 "x": "Owner",
 "y": "Amount",
 "type": "multiBarChart",
 "group": "Category",
+"id": "chart2bb01716d8c" 
 },
         data = [
  {
@@ -179,6 +184,9 @@
  "left":     80 
 })
   .stacked(true)
+  .tooltipContent( function(key, x, y,e){ 
+  return '<h3><strong>' + key + '</strong></h3>' + y + ' for ' +
+  x
 } )
           
         chart.xAxis
