@@ -23,21 +23,21 @@
   </head>
   <body >
     
-    <div id = 'chart584dd927a' class = 'rChart nvd3'></div>    
+    <div id = 'chart9e4752f1923' class = 'rChart nvd3'></div>    
     <script type='text/javascript'>
  $(document).ready(function(){
-      drawchart584dd927a()
+      drawchart9e4752f1923()
     });
-    function drawchart584dd927a(){  
+    function drawchart9e4752f1923(){  
       var opts = {
- "dom": "chart584dd927a",
+ "dom": "chart9e4752f1923",
 "width":    725,
 "height":    400,
 "x": "Date",
 "y": "OwnCumSum",
 "type": "lineChart",
 "group": "Owner",
-"id": "chart584dd927a" 
+"id": "chart9e4752f1923" 
 },
         data = [
  {
@@ -23025,18 +23025,8 @@
  "left":     80 
 })
   .color([ "#CC0C39", "#E6781E", "#C8CF02", "#1693A7", "#EDC951" ])
-  .tooltipContent( function(key, x, y,e){ 
-  return '<h3><strong>' + key + '</strong></h3>' + '$' + d3.format(',.2f')(e.point.OwnCumSum) + ' on ' +
-  d3.time.format.utc('%b %e, %Y')(new Date(e.point.Date))
-} )
           
-        chart.xAxis
-  .tickValues([ 1.4543e+12, 1.4568e+12, 1.4595e+12 ])
-  .tickFormat(
-      function(d) {return d3.time.format.utc('%b %Y')(new Date(d));}
-    )
-  .rotateLabels(   -30)
-  .showMaxMin(false)
+        
 
         
         

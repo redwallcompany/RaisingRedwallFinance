@@ -23,21 +23,21 @@
   </head>
   <body >
     
-    <div id = 'chart58438c8601f' class = 'rChart nvd3'></div>    
+    <div id = 'chart9e42f83478b' class = 'rChart nvd3'></div>    
     <script type='text/javascript'>
  $(document).ready(function(){
-      drawchart58438c8601f()
+      drawchart9e42f83478b()
     });
-    function drawchart58438c8601f(){  
+    function drawchart9e42f83478b(){  
       var opts = {
- "dom": "chart58438c8601f",
+ "dom": "chart9e42f83478b",
 "width":    725,
 "height":    400,
 "x": "Tag",
 "y": "Total",
 "type": "multiBarChart",
 "group": "Category",
-"id": "chart58438c8601f" 
+"id": "chart9e42f83478b" 
 },
         data = [
  {
@@ -149,9 +149,9 @@
          
         chart
   .stacked(true)
-  .tooltipContent( function(key, x, y,e){ 
-  return '<h3><strong>' + key + '</strong></h3>' + '$' + d3.format(',.2f')(e.point.Total) + ' in ' +
-  e.point.Category
+  .tooltipContent( function(key, x, y,e){
+return '<h3><strong>' + key + '</strong></h3>' + '$' + d3.format(',.2f')(e.point.Total) + ' in ' +
+e.point.Category
 } )
           
         chart.xAxis
