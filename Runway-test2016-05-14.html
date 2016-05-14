@@ -15,29 +15,29 @@
       display: block;
       margin-left: auto; 
       margin-right: auto;
-      width: 300px;
-      height: 260px;
+      width: 700px;
+      height: 400px;
     }  
     </style>
     
   </head>
   <body >
     
-    <div id = 'chart1a445173409' class = 'rChart nvd3'></div>    
+    <div id = 'chart1a0c7ca2579' class = 'rChart nvd3'></div>    
     <script type='text/javascript'>
  $(document).ready(function(){
-      drawchart1a445173409()
+      drawchart1a0c7ca2579()
     });
-    function drawchart1a445173409(){  
+    function drawchart1a0c7ca2579(){  
       var opts = {
- "dom": "chart1a445173409",
-"width":    300,
-"height":    260,
+ "dom": "chart1a0c7ca2579",
+"width":    700,
+"height":    400,
 "x": "Date",
 "y": "RunTime",
 "type": "lineChart",
 "group": "Ftag",
-"id": "chart1a445173409" 
+"id": "chart1a0c7ca2579" 
 },
         data = [
  {
@@ -28853,18 +28853,21 @@
           
          
         chart
+  .margin({
+ "left":     80 
+})
   .forceY([      0,  55000 ])
   .color([ "#F1D2B7", "#CC0C39" ])
-  .tooltipContent( function(key, x, y,e){ 
-  return '<h3><strong>' + key + '</strong></h3>' + '$' + d3.format(',.2f')(e.point.RunTime) + ' on ' +
-  d3.time.format.utc('%b %e, %Y')(new Date(e.point.Date))
+  .tooltipContent( function(key, x, y,e){
+return '<h3><strong>' + key + '</strong></h3>' + '$' + d3.format(',.2f')(e.point.RunTime) + ' on ' +
+d3.time.format.utc('%b %e, %Y')(new Date(e.point.Date))
 } )
           
         chart.xAxis
   .tickValues([ 1.4543e+12, 1.4621e+12, 1.47e+12, 1.478e+12, 1.486e+12 ])
   .tickFormat(
-      function(d) {return d3.time.format.utc('%b %Y')(new Date(d));}
-    )
+function(d) {return d3.time.format.utc('%b %Y')(new Date(d));}
+)
   .rotateLabels(   -30)
   .showMaxMin(false)
 
@@ -28873,6 +28876,8 @@
         chart.yAxis
   .tickValues([      0,  10000,  20000,  30000,  40000,  50000 ])
   .tickFormat( function(d) {return '$' + d3.format(',.0f')(d/1000)+'k' } )
+  .axisLabel("Runway")
+  .width(    55)
   .showMaxMin(false)
       
        d3.select("#" + opts.id)
