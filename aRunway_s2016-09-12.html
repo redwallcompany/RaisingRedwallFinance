@@ -23,25 +23,25 @@
   </head>
   <body >
     
-    <div id = 'chartb5819891e76' class = 'rChart nvd3'></div>    
+    <div id = 'chartb583bdb7842' class = 'rChart nvd3'></div>    
     <script type='text/javascript'>
  $(document).ready(function(){
-      drawchartb5819891e76()
+      drawchartb583bdb7842()
     });
-    function drawchartb5819891e76(){  
+    function drawchartb583bdb7842(){  
       var opts = {
- "dom": "chartb5819891e76",
+ "dom": "chartb583bdb7842",
 "width":    260,
 "height":    260,
 "x": "Date",
 "y": "RunTime",
 "type": "lineChart",
 "group": "Ftag",
-"id": "chartb5819891e76" 
+"id": "chartb583bdb7842" 
 },
         data = [
  {
- "Date": null,
+ "Date":  1456790400000,
 "Time": "18:31",
 "Amount":           0.01,
 "Currency": "USD",
@@ -55,11 +55,11 @@
 "OwnCumSum":           0.01,
 "CumSum":           0.01,
 "RunTime":       49999.99,
-"UNIXTime": null,
+"UNIXTime":     1456790400,
 "Ftag": "1 Year Burn Rate" 
 },
 {
- "Date": null,
+ "Date":  1488326400000,
 "Time": "18:31",
 "Amount":       50000.01,
 "Currency": "USD",
@@ -73,7 +73,7 @@
 "OwnCumSum":       50000.02,
 "CumSum":       50000.02,
 "RunTime": -0.02000000000407,
-"UNIXTime": null,
+"UNIXTime":     1488326400,
 "Ftag": "1 Year Burn Rate" 
 },
 {
@@ -56252,15 +56252,15 @@
   .forceY([      0,  55000 ])
   .color([ "#F1D2B7", "#CC0C39" ])
   .tooltipContent( function(key, x, y,e){ 
-  return '<h3><strong>' + key + '</strong></h3>' + '$' + d3.format(',.2f')(e.point.RunTime) + ' on ' +
-  d3.time.format.utc('%b %e, %Y')(new Date(e.point.Date))
-} )
+    return '<h3><strong>' + key + '</strong></h3>' + '$' + d3.format(',.2f')(e.point.RunTime) + ' on ' +
+    d3.time.format.utc('%b %e, %Y')(new Date(e.point.Date))
+  } )
           
         chart.xAxis
   .tickValues([ 1.4543e+12, 1.4621e+12, 1.4701e+12, 1.478e+12, 1.486e+12 ])
   .tickFormat(
-      function(d) {return d3.time.format.utc('%b %Y')(new Date(d));}
-    )
+        function(d) {return d3.time.format.utc('%b %Y')(new Date(d));}
+      )
   .rotateLabels(   -30)
   .showMaxMin(false)
 
