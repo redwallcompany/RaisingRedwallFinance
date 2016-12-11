@@ -23,130 +23,118 @@
   </head>
   <body >
     
-    <div id = 'chart85418795acf' class = 'rChart nvd3'></div>    
+    <div id = 'chart2b644d1c5763' class = 'rChart nvd3'></div>    
     <script type='text/javascript'>
  $(document).ready(function(){
-      drawchart85418795acf()
+      drawchart2b644d1c5763()
     });
-    function drawchart85418795acf(){  
+    function drawchart2b644d1c5763(){  
       var opts = {
- "dom": "chart85418795acf",
+ "dom": "chart2b644d1c5763",
 "width":    675,
 "height":    400,
-"x": "Owner",
-"y": "Amount",
+"x": "Tag",
+"y": "Total",
 "type": "multiBarChart",
 "group": "Category",
-"id": "chart85418795acf" 
+"id": "chart2b644d1c5763" 
 },
         data = [
  {
  "Country": "USA",
 "Category": "Apartment",
-"Amount": 362.5022772945,
-"Owner": "Mike" 
-},
-{
- "Country": "USA",
-"Category": "Automotive",
-"Amount": 137.7264066952,
-"Owner": "Mike" 
-},
-{
- "Country": "USA",
-"Category": "Entertainment",
-"Amount": 53.01023351648,
-"Owner": "Mike" 
+"Amount": 29.38255930657,
+"Owner": "NA",
+"Total":     8050.82125,
+"Tag": "Expenses" 
 },
 {
  "Country": "USA",
 "Category": "Food",
-"Amount": 278.7748778999,
-"Owner": "Mike" 
-},
-{
- "Country": "USA",
-"Category": "Personal Care",
-"Amount": 64.40515618641,
-"Owner": "Mike" 
-},
-{
- "Country": "USA",
-"Category": "Climbing",
-"Amount": 97.36007326007,
-"Owner": "Mike" 
-},
-{
- "Country": "USA",
-"Category": "Apartment",
-"Amount": 328.9386554996,
-"Owner": "Teddy" 
+"Amount": 21.12222627737,
+"Owner": "NA",
+"Total":        5787.49,
+"Tag": "Expenses" 
 },
 {
  "Country": "USA",
 "Category": "Automotive",
-"Amount": 144.0626551689,
-"Owner": "Teddy" 
+"Amount": 20.98135036496,
+"Owner": "NA",
+"Total":        5748.89,
+"Tag": "Expenses" 
 },
 {
  "Country": "USA",
-"Category": "Food",
-"Amount": 240.1306700244,
-"Owner": "Teddy" 
-},
-{
- "Country": "USA",
-"Category": "Personal Care",
-"Amount": 48.08488756614,
-"Owner": "Teddy" 
-},
-{
- "Country": "USA",
-"Category": "Entertainment",
-"Amount": 28.00895909646,
-"Owner": "Teddy" 
+"Category": "Assets",
+"Amount":  10.8852919708,
+"Owner": "NA",
+"Total":        2982.57,
+"Tag": "Expenses" 
 },
 {
  "Country": "USA",
 "Category": "Climbing",
-"Amount": 90.71631562882,
-"Owner": "Teddy" 
-},
-{
- "Country": "USA",
-"Category": "Apartment",
-"Amount": 376.8933692956,
-"Owner": "Paul" 
-},
-{
- "Country": "USA",
-"Category": "Automotive",
-"Amount":  212.583531746,
-"Owner": "Paul" 
-},
-{
- "Country": "USA",
-"Category": "Food",
-"Amount": 245.5352827381,
-"Owner": "Paul" 
-},
-{
- "Country": "USA",
-"Category": "Entertainment",
-"Amount": 17.64927083333,
-"Owner": "Paul" 
+"Amount": 10.10379562044,
+"Owner": "NA",
+"Total":        2768.44,
+"Tag": "Expenses" 
 },
 {
  "Country": "USA",
 "Category": "Personal Care",
-"Amount": 56.55617063492,
-"Owner": "Paul" 
+"Amount": 4.634854014599,
+"Owner": "NA",
+"Total":        1269.95,
+"Tag": "Expenses" 
 },
 {
  "Country": "USA",
-"Category": "Climbing",
-"Amount":              0,
-"Owner": "Paul" 
+"Category": "Construction Materials",
+"Amount": 4.377773722628,
+"Owner": "NA",
+"Total":        1199.51,
+"Tag": "Expenses" 
+},
+{
+ "Country": "USA",
+"Category": "Paperwork",
+"Amount": 4.096240875912,
+"Owner": "NA",
+"Total":        1122.37,
+"Tag": "Expenses" 
+},
+{
+ "Country": "USA",
+"Category": "Entertainment",
+"Amount": 3.101861313869,
+"Owner": "NA",
+"Total":         849.91,
+"Tag": "Expenses" 
+},
+{
+ "Country": "USA",
+"Category": "Tools",
+"Amount": 1.831350364964,
+"Owner": "NA",
+"Total":         501.79,
+"Tag": "Expenses" 
+},
+{
+ "Country": "USA",
+"Category": "Website",
+"Amount": 1.263321167883,
+"Owner": "NA",
+"Total":         346.15,
+"Tag": "Expenses" 
+},
+{
+ "Country": "USA",
+"Category": "Research",
+"Amount": 0.3988321167883,
+"Owner": "NA",
+"Total":         109.28,
+"Tag": "Expenses" 
 } 
 ]
   
@@ -179,14 +167,10 @@
           
          
         chart
-  .color([ "#CC0C39", "#E6781E", "#C8CF02", "#1693A7", "#EDC951" ])
-  .margin({
- "left":     80 
-})
   .stacked(true)
   .tooltipContent( function(key, x, y,e){ 
-    return '<h3><strong>' + key + '</strong></h3>' + y + ' for ' +
-    x
+    return '<h3><strong>' + key + '</strong></h3>' + '$' + d3.format(',.2f')(e.point.Total) + ' in ' +
+    e.point.Category
   } )
           
         chart.xAxis
@@ -195,9 +179,9 @@
         
         
         chart.yAxis
-  .tickFormat( function(d) {return '$' + d3.format(',.2f')(d)} )
-  .axisLabel("Average Monthly Spending")
-  .width(    70)
+  .tickFormat( function(d) {return '$' + d3.format(',.0f')(d)} )
+  .axisLabel("Spent")
+  .width(    60)
   .showMaxMin(false)
       
        d3.select("#" + opts.id)
